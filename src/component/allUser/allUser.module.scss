@@ -1,0 +1,136 @@
+@import "../../generalStyle/color";
+
+.all_user {
+  > .items {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 20px;
+    > .item {
+      overflow: hidden;
+      border-radius: 5px;
+      padding: 15px;
+      background-color: $backGroudCard;
+      box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.1);
+      width: calc((100% / 4) - 20px + (20px / 4));
+      max-width: calc((100% / 4) - 20px + (20px / 4));
+      @media screen and (max-width: 1200px) {
+        width: calc((100% / 3) - 20px + (20px / 3));
+        max-width: calc((100% / 3) - 20px + (20px / 3));
+      }
+      @media screen and (max-width: 900px) {
+        width: calc((100% / 2) - 20px + (20px / 2));
+        max-width: calc((100% / 2) - 20px + (20px / 2));
+      }
+      @media screen and (max-width: 600px) {
+        width: calc((100% / 1) - 20px + (20px / 1));
+        max-width: calc((100% / 1) - 20px + (20px / 1));
+      }
+      > .card {
+        display: flex;
+    flex-direction: column;
+    aspect-ratio: 5/6;
+    @media screen and (max-width:1250px) {
+    aspect-ratio: 5/6.4;
+      
+    };
+    @media screen and (max-width:1200px) {
+      aspect-ratio: 5/4.8;
+        
+      };
+      @media screen and (max-width:1150px) {
+        aspect-ratio: 5/5.3;
+          
+        };
+        @media screen and (max-width:1000px) {
+          aspect-ratio: 5/6.7;
+            
+          };
+    @media screen and (max-width:900px) {
+      aspect-ratio: 5/4.7;
+        
+      };
+      @media screen and (max-width:600px) {
+        aspect-ratio: 5/3;
+          
+        };
+        > .image {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          > img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            outline: 1px solid gray;
+            outline-offset: 3px;
+          }
+          > p {
+            margin-top: 5px;
+            font-size: 12px;
+            color: $blackText;
+          }
+        }
+        > .info {
+          margin-top: 10px;
+          > .info_item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin: 3px 0;
+            > .info_item_title {
+              color: $grayText;
+              font-size: 13px;
+
+            }
+            > .info_item_value {
+              word-break: break-all;
+              font-size: 12px;
+              color: $blackText;
+             
+            }
+            > .info_item_value_address {
+              word-break: break-all;
+              font-size: 12px;
+              color: $blackText;
+
+            }
+          }
+        }
+        > .btn {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: auto;
+          > button {
+            cursor: pointer;
+            padding: 10px 18px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background: $maincolor;
+            color: $btnColorText;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245, 82, 82);
+  padding: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  > .error_message {
+    color: white;
+  }
+}

@@ -1,0 +1,39 @@
+@import "./color";
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+:root.light {
+  --mainColor: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+
+  --backGroudCard: rgba(241, 234, 234, 0.568);
+  --backGroudCardDark: rgba(235, 230, 230, 0.493);
+  --blackText: rgb(34, 33, 33);
+  --grayText: #555353;
+  --bodyColor: rgb(248, 245, 245);
+  --btnColorText: white;
+}
+:root.dark {
+  --mainColor: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+
+  --backGroudCard: #0a2746;
+  --backGroudCardDark: #0a325c;
+  --blackText: #e7ebf0;
+  --grayText: #93999e;
+  --bodyColor: #0a1929;
+  --btnColorText: white;
+}
+
+* {
+  transition: all 0.3s;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  transition: background 0.3s;
+  background: $bodyColor;
+  position: relative;
+  min-height: 100vh;
+  font-family: "IBM Plex Sans", sans-serif;
+  // font-family: 'Roboto', sans-serif;
+}

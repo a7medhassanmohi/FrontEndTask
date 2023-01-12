@@ -1,0 +1,32 @@
+.Nav_container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    font-family: 'Alfa Slab One', cursive;
+    height: 80px;
+    background-color: rgb(6, 6, 24);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    box-shadow: 5px 7px 5px -1px rgb(0 0 0 / 10%);
+    >h1{
+        letter-spacing: 1.3px;
+        text-shadow: 4px 3px 3px #505095;
+        cursor: pointer;
+    }
+    >.dark_light{
+
+        >svg{
+            font-size: 50px;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+        >.sun{
+            color: rgb(231, 211, 95);
+        }
+    }
+}
