@@ -6,7 +6,7 @@ import FailedFetchError from "../errorPage/FailedFetchError";
 import Loading from "../loading/Loading";
 import styles from "./comment.module.scss";
 import CommetItem from "./CommetItem";
-const Comment = forwardRef(({ postId }, ref) => {
+const Comment = forwardRef(({ postId, setisloadingcomment }, ref) => {
   const loadItem = useRef(null);
   let location = useLocation();
   const {
@@ -36,6 +36,9 @@ const Comment = forwardRef(({ postId }, ref) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location]);
+  useEffect(() => {
+    setisloadingcomment(isLoading);
+  }, [isLoading]);
 
   return (
     <>
