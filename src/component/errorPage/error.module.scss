@@ -51,3 +51,18 @@
     border: none;
     box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.308);
   }
+
+
+  .error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 82, 82);
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    > .error_message {
+      color: white;
+    }
+  }
+  

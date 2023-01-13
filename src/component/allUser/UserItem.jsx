@@ -14,7 +14,6 @@ e.currentTarget.src=defaultImage
   return (
     
     <div className={styles['item']}>
-    <div className={styles['card']}>
       <div className={styles['image']}>
         <img src={image} alt="image" onError={handleErrorImage} />
         <p>{username}</p>
@@ -26,14 +25,14 @@ e.currentTarget.src=defaultImage
       <UserInfo title="Email" value={email}/>
         <div className={styles['info_item']}>
           <p className={styles['info_item_title']}>Address:</p>
-          <p className={styles['info_item_value_address']}>{address?.address}- <div>{(address?.city)|| "Alex"}</div>  </p>
+          <p className={styles['info_item_value_address']}>{address?.address}- {(address?.city)|| "Alex"}  </p>
         </div>
       </div>
       <div className={styles['btn']}>
 
       <button onClick={()=>{navigate(`/posts/${id}`)}}>Posts</button>
       </div>
-    </div>
+  
   </div>
   )
 }

@@ -2,6 +2,7 @@ import React, { forwardRef, useEffect, useRef } from "react";
 import { useInfiniteQuery } from "react-query";
 import { useLocation } from "react-router";
 import { fetchComments } from "../../helper/fetchData";
+import FailedFetchError from "../errorPage/FailedFetchError";
 import Loading from "../loading/Loading";
 import styles from "./comment.module.scss";
 import CommetItem from "./CommetItem";
@@ -51,13 +52,7 @@ const Comment = forwardRef(({ postId }, ref) => {
           {!isError && !isLoading && !data?.pages[0].comments.length && (
             <p className={styles["no_comments"]}>No Comments available</p>
           )}
-          {isError && (
-            <div className={styles["error"]} onClick={refetch}>
-              <p className={styles["error_message"]}>
-                Failed to Fetch Comment please click here to refetch
-              </p>
-            </div>
-          )}
+          <FailedFetchError refetch={refetch} isError={isError} />
 
           <div
             className={styles[`comments_items`]}

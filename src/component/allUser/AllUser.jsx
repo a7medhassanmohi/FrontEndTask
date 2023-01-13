@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { useInfiniteQuery } from "react-query";
 import { useLocation } from 'react-router';
 import { fetchUsers } from "../../helper/fetchData";
+import FailedFetchError from '../errorPage/FailedFetchError';
 import ScrollLoading from '../infintyScrollLoading/ScrollLoading';
 import Loading from '../loading/Loading';
 import Title from '../title/Title';
@@ -52,9 +53,8 @@ import UserItem from './UserItem';
         </div>
 
     </div>
-    { isError && <div className={styles["error"]} onClick={refetch}>
-    <p className={styles["error_message"]}> Failed to Fetch Data please click here</p>
-   </div> }
+  
+   <FailedFetchError refetch={refetch} isError={isError} />
  
    <ScrollLoading isFetchingNextPage={isFetchingNextPage} hasNextPage={hasNextPage} ref={loadItem} text="No User Left" isLoading={isLoading} isError={isError}/>
     </>

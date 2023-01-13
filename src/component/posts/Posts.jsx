@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { useInfiniteQuery } from "react-query";
 import { useParams } from "react-router";
 import { fetchPosts } from "../../helper/fetchData";
+import FailedFetchError from "../errorPage/FailedFetchError";
 import ScrollLoading from "../infintyScrollLoading/ScrollLoading";
 import Loading from "../loading/Loading";
 import Title from "../title/Title";
@@ -54,13 +55,8 @@ function Posts() {
       {!isError && !isLoading && !data?.pages[0].posts?.length && (
         <div className={styles["no_posts"]}>No posts Exists</div>
       )}
-      {isError && (
-        <div className={styles["error"]} onClick={refetch}>
-          <p className={styles["error_message"]}>
-            Failed to Fetch Data please click here
-          </p>
-        </div>
-      )}
+        <FailedFetchError refetch={refetch} isError={isError} />
+
       <ScrollLoading
         isFetchingNextPage={isFetchingNextPage}
         hasNextPage={hasNextPage}
